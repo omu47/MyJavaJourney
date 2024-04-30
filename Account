@@ -1,0 +1,52 @@
+class Account{  
+double acc_no;  
+String name;  
+double amount;  
+
+void insert(double a,String n,double amt)
+{
+  acc_no=a;
+  name=n;
+  amount=amt;
+}//initialization of object is done
+void deposite(double amt)
+{
+  amount=amount+amt;
+  System.out.println(amt+" has been deposited to your account");
+}
+
+void withdraw(double amt)
+{
+  if(amount<amt)
+  {
+      System.out.println("Insufficient balance");
+  }
+  else 
+  {
+     amount=amount-amt;
+     System.out.println(amt+" has been withdrawed from your account");
+  }
+}
+void checkbalance()
+{
+  System.out.println("your current balance is "+amount);
+}
+void display()
+{
+  System.out.println(name+" "+acc_no+" "+amount);
+}
+}
+class main
+{
+  public static void main(String[] args)
+  {
+      Account a=new Account();
+      a.insert(20024,"Sagar",5002.23);
+      a.display();
+      a.checkbalance();
+      a.deposite(4000);
+      a.checkbalance();
+      a.withdraw(500);
+      a.checkbalance();
+  }
+}
